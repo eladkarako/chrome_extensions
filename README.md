@@ -1,7 +1,7 @@
 <strong>chrome_extensions</strong><br/>
 Install <a href="https://github.com/eladkarako/chrome_extensions/releases/tag/LatestFirefox">Latest Releases - Firefox</a> (yep, it's signed by Mozilla!)<br/>
 Install <a href="https://github.com/eladkarako/chrome_extensions/releases/tag/LatestChrome">Latest Releases - Chrome</a><br/>
-<a href="https://github.com/eladkarako/chrome_extensions/store/README.md">Index</a><br/>
+<a href="https://github.com/eladkarako/chrome_extensions/blob/store/README.md">Index</a><br/>
 
 <hr/>
 I hope you will have fun using my web-extensions, <br/> 
