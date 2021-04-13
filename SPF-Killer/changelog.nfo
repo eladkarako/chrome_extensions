@@ -1,0 +1,107 @@
+1.2.7.9
+- disabling refreshing "landing page" when disable polymer switch is specified, since information regarding previous refreshes is not maintained in anyway, and YouTube sometimes removes hash-tags when an "action argument" is specified in the URL (argument that results with modifying a cookie and refreshing the page by getting a server HTTP-302-redirect) --- so without hash-tag "flag" the page often keeps refreshing... :( --- web-extension main functionality is now is just: 1. "passive" modifying page's video-links, 2. client-side cookie modification, 3. YouTube/player object-in-memory modifications. possible way to disable SPF for sure is disable the 'HTML5 History-API'.
+
+1.2.7.8
++ move logic to a browser-handled async block, by keeping 'action' as normal function, and moving all logic into a secodary 'async function async_action(){____}' block (which returns a promise, which isn't used for now). it simulates an old 'setTimeout(FUNCTION,0)'.
+
+1.2.7.7
++ adding 'persist_gl=1' to '&gl=GB&hl=en-GB' to really make the language work.
+
+1.2.7.5
++ forcing language and country (EN_UK).
+
+1.2.7.4
+* visual fix - url with already 'disable_polymer=1' (still going to reload if hash-tag #spfk-no-polymer isn't existing, to normalize cases).
+
+1.2.7.3
+* spfkiller-no-polymer to spfk-no-polymer, just to not have the word 'killer' (which by old means, is bad) in every youtube video... :|
+
+1.2.7.2
+* using the 'disable_polymer=1' argument in the "URL-search" can not be used as flag, YouTube, once accepts it, will "soft refresh" (History Push API and content modification), removing the "URL-SEARCH" argument (and applyting whatever internal-engine switch it does. In order to prevet infinite loading I also add a "URL-HASH" of "spfkiller-no-polymer", that will stay across YouTube-reloads and prevent the web-extension from loading the URL again.
++ providing loading stop and playing stop as soon as possible before a page reload is required.
++ web-extension uses for the main-page location.replace to avoid double entries in the history (does not related to SPF engine which is using location.assign).
+
+1.2.6.10
+* write '&f6=8' to 'domain=.youtube.com', it should bring back classic look in additional to the disable polymer switch.
+
+1.2.6.9
+* permission update for closed-tabs check before updating web-extension badge-number.
+
+1.2.6.8
+* revert some event-handlers to prevent reloading-loops...
+
+1.2.6.6
+* improving cross-browser-API compatibility.
+
+1.2.6.1
+* observing DOM changes more closely.
+
+1.2.5.3
++ adding "self.yt" to the known pre-set configuration-containers.
++ "config_" sub-key for each of the configuration containers.
++ reducing hooking-event on document in favor of window/self - for event that do permeates/bubble up to window.
+
+1.2.5.2
++ running main logic on resize/transitionend/visibilitychange DOM-events which is commonly used in YouTube's material-design, this helps fixing "new links" that are added when clicking "Load more" button.
+
+1.2.5.1
+* moved polymer handling code to top of the method, so if there is a redirect at-hand, it would be done asap, without running the common-tasks of the extension (since there will be navigation to another page anyway...).
++ handling SPF and session classes in a generic-heuristic way (plus some SPF attributes- data-spf-name)
+* code reduced, noted and sectioned.
+
+1.2.4.5
+* removing interval (timeout) in favor of 'yt-page-*' and 'yt-navigate-*' event listenning.
+
+1.2.4.4
++ soft disabling polymer and SPF through YouTube's stored EXPERIMENT_FLAGS
+
+1.2.4.2
+* making the injected-code an internal function, - and then using it, as string for injection, this makes it available for execution through the Chrome-extension scope too.
++ engine need to use setInterval since SPF custom-events are not always captured by standard-event handlers, generic window listeners won't help...
++ override SPF navigate method with classic assign method, as a fallback to soft-disabling it with the config-objects.
+
+1.2.4.1
++ (re)adding hard-coded '_spf_state' and 'ytspf' rewrite to any self-window, hopfully to trigger fallback code (even objects were not existed) --- This is in additional to "discovering" a "SPF like" object in self-window anyway.
++ adding 'enabled=false' (and 'config.enabled=false') attributes, found in some old SPF engines online (that might still trigger fallback to regular browsing).
+* fixing some typos in string-replace without target + using multiline regex directive.
+
+1.2.3.1
++ using the "disable_polymer=1" on links and page-location.
++ limiting to youtube domains only.
+
+1.2.2.4
++ limit operation for text/html documents (ignore xml, rss, etc...)
+
+1.2.2.3
+* improved script injection on early page-loading stages (no body).
+
+1.2.1.1
++ inject fixing script to DOM, for specific window-SPF-like objects (heuristic) as queried from extension-context-scope.
+* accurate counter update per needed objects.
+* execute code in blocking code-block, rendering will halt until exeuted. Good thing, more secure.
+
+1.0.9.1
+- fork-out (ha!) History-API-Disabler chrome-extension
+* reduce code, making SPF-like object discovery dynamic both in extension-scope and in page-scope injection.
+
+1.0.8.1
++ disables HTML5 history-api so websites will fallback to normal browsing.
+
+1.0.7.1
+* does an improve discovery for SPF objects on the page, without actually pre-knowning their name. Will help discovery custom-SPF-products such as "ytspf" (youtube's SPF product) and will make the discovery code more heuristic and less hard-coded ;)
+
+1.0.6.1
++ detaching some of the code to be ran from pure-DOM scope, override protection/isolations.
+
+1.0.5.1
++adding support 'history-error-callback' in additional for 'navigate-part-received-callback' which is no-longer available for newer versios of SPF.js
++listening to window/document SPF events (done/partdone are useful the rest are heuristics)
+
+1.0.4.1
++ improved counting and updating description of fixes in the badge-icon.
+
+1.0.3.2
+* only apply the SPF-limit fix if there is a evidence of SPF configuration object in the DOM.
+
+1.0.3.1
++ initial (no versioning while product was in-alpha developing :| ).

@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "API-Killer-History" }
+, "name_long":    {"message":   "API-Killer-History" }
+, "name_desc":    {"message":   "☞︎ Disable's HTML5's History API. Most WebSites That Uses SPF Or JS-Navigation Will Fallback To Standard-Page Loading." }
+}

@@ -1,0 +1,5 @@
+1.0.0.3
++wrapped DOM-client-side-functionality in functions and used async execution when possible (client_style_off_async_action in 'client_style_off.js'/client_style_on_async_action in 'client_style_on.js'). extension-side scripts have no-change.
+
+1.0.0.1
++ initial

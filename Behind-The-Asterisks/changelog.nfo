@@ -1,0 +1,71 @@
+4.0.3.6
+* explicitly and exclusivly use passive-events in all event-listeners (where using 'preventDefault' is not needed as a part of the functionality anyway). should improve page-performances.
+* alternative check for main method 'action' when running from a different JavaScript file ('at_document_end.js'/'at_document_idle.js'), instead of try/catch which slows down performances due to extensive call-stack and prevents discoverying for other thrown errors.
+
+4.0.3.5
++ move logic to a browser-handled async block, by keeping 'action' as normal function, and moving all logic into a secodary 'async function async_action(){____}' block (which returns a promise, which isn't used for now). it simulates an old 'setTimeout(FUNCTION,0)'.
+
+4.0.3.4
+* improve engine and use passive-events when possible for mouse/touch related events.
+
+4.0.3.3
+* additional repeat main method check, with alarms-api.
+
+4.0.3.2
+* cleanup old event-hooks.
+
+4.0.3.1
+* improving cross-browser-API compatibility.
+
+4.0.2.4
+* using compatible event handler (non-passive).
+
+4.0.2.1
++ added support for Chrome's idle state.
+- reduce package size.
+- limit re-discovery to once per-page life-cycle state-change (load/ready).
+
+4.0.1.9
+* fix engine-loading.
+
+4.0.1.8
++ error handling
+
+4.0.1.7
+* engine update with improved id-logic.
+
+4.0.1.5
+* extension description update with emoji.
+
+4.0.1.3
++ error-handling.
+
+4.0.1.2
+* adding prototyping for browser compatibility.
+
+4.0.1.1
+* tag-number updated instead of overriding it.
+
+4.0.0.2
+* engine update.
+
+4.0.0.1
+* project architecture, support execution on pages with and without JavaScript support, no code-duplication using the scope of the chrome-extension.
+
+3.0.2.2
+* Execution start earlier, for heavy pages.
+
+3.0.1.1
+* Enhance code-engine.
++ HoverText to Behind-The-Asterisks (Same as my 'old' Firefox-Extension name.. :])
+
+2.1.0.3
+* store mouse-hover state as object-oriented attribute instead of HTML element-attribute.
+
+2.1.0.1
+- limit mouse enter/leave event, in-favor of in/over.
+* always execute main action in friendly non-blocking way.
+
+2.0.3.1
++ Initial (no up-versioning while I've developed it...)
+

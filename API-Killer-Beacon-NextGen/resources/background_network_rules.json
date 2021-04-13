@@ -1,0 +1,8 @@
+[
+  {
+    "id"          : 1
+   ,"priority"    : 2
+   ,"action"      : {"type"          : "block"  }
+   ,"condition"   : {"resourceTypes" : ["ping"] }
+  }
+]

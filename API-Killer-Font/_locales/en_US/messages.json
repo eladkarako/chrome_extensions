@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "API-Killer-Font" }
+, "name_long":    {"message":   "API-Killer-Font" }
+, "name_desc":    {"message":   "☞︎ No: [remote-fonts|CSS Font Loading|FontFace interface]. Optional Tip: Chrome: --disable-remote-fonts / Firefox: gfx.downloadable_fonts.enabled - false ." }
+}

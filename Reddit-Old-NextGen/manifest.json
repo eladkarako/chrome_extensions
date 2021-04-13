@@ -1,0 +1,32 @@
+{ "manifest_version"        : 2
+, "minimum_chrome_version"  : "28.0"
+
+, "default_locale"          : "en_US"
+, "name"                    : "__MSG_name_long__"
+, "short_name"              : "__MSG_name_shrt__"
+, "description"             : "__MSG_name_desc__"
+
+, "version"                 : "1.0.0.1"
+, "homepage_url"            : "https://github.com/eladkarako/chrome_extensions/tree/store/Reddit-Old-NextGen/README.md"
+, "author"                  : "Elad Karako"
+
+, "offline_enabled"         : false
+
+, "permissions"             : ["*://reddit.com/*"
+                              ,"*://www.reddit.com/*"
+                              ,"*://amp.reddit.com/*"
+                              ,"*://np.reddit.com/*"
+                              ,"declarativeNetRequest"
+                              ]
+
+,"declarative_net_request"  : { "rule_resources": [{"path"    : "resources/ruleset01.json"
+                                                   ,"id"      :"ruleset01"
+                                                   ,"enabled" : true
+                                                   }
+                                                  ]
+                              }
+
+,"icons"                    : { "128": "resources/icon.png" }
+,"browser_action"           : {
+                              }
+}

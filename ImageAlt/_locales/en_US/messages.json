@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "ImageAlt" }
+, "name_long":    {"message":   "ImageAlt" }
+, "name_desc":    {"message":   "☞︎ Show Image-Description taken from its ALT or TITLE attributes" }
+}

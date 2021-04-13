@@ -1,0 +1,12 @@
+1.0.0.4
+* code restyle.
+* adding async for non-linear hook-event.
+
+1.0.0.3
++ support older-browsers.
+
+1.0.0.2
+* fix cases that URLs are ending with "/".
+
+1.0.0.1
++ Initial.

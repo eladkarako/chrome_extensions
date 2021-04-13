@@ -1,0 +1,9 @@
+1.0.0.4
++ move logic to a browser-handled async block, by keeping 'action' as normal function, and moving all logic into a secodary 'async function async_action(){____}' block (which returns a promise, which isn't used for now). it simulates an old 'setTimeout(FUNCTION,0)'.
+
+1.0.0.3
+* pre-unescape the file-name (%20 to ' ' for example).
+* adding hooking more events to hopefully trigger soon for dynamic content-change..
+
+1.0.0.1
++ initial.

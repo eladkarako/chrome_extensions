@@ -1,0 +1,18 @@
+{ "manifest_version"        : 2
+, "minimum_chrome_version"  : "28.0"
+
+, "default_locale"          : "en_US"
+, "name"                    : "__MSG_name_long__"
+, "short_name"              : "__MSG_name_shrt__"
+, "description"             : "__MSG_name_desc__"
+
+, "version"                 : "1.0.0.2"
+, "homepage_url"            : "https://github.com/eladkarako/chrome_extensions/tree/store/Override-NewTab/README.md"
+, "author"                  : "Elad Karako"
+
+, "incognito"               : "split"
+, "offline_enabled"         : true
+
+, "chrome_url_overrides"    : {"newtab" : "resources/index.html"
+                              }
+}

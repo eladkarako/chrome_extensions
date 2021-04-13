@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "eBay-Larger-Images-NextGen" }
+, "name_long":    {"message":   "eBay-Larger-Images-NextGen" }
+, "name_desc":    {"message":   "☞︎ Internally Redirects Image-Requests To A Much Larger-Resolution (Mostly- 640x640 Pixels). Uses declarativeNetRequest and a JSON-file, No JavaScript At All!!" }
+}

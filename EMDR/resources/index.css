@@ -1,0 +1,163 @@
+@charset "UTF-8";
+@namespace "http://www.w3.org/1999/xhtml";
+*{
+  box-sizing:                   border-box;
+  text-size-adjust:                   100%;
+}
+html,body{
+  height:                             100%;
+  width:                              100%;
+  padding:                               0;
+  margin:                                0;
+  overflow:                         hidden;
+}
+html{ 
+  font:      20pt 'Courier New', monospace;
+}
+body{
+  background-color: lightblue;
+}
+
+
+/*portrait*/
+@keyframes xAxis {50%{
+  animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+  transform: translateY(87vmax);
+}}
+@keyframes yAxis {50%{
+  animation-timing-function: cubic-bezier( 0.3, 0.27, 0.07, 1.64);
+  transform: translateX(63vmin);
+}}
+
+@media (orientation:landscape) {
+  @keyframes xAxis {50%{
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(82vmin);
+  }}
+  @keyframes yAxis {50%{
+    animation-timing-function: cubic-bezier( 0.3, 0.27, 0.07, 1.64);
+    transform: translateX(68vmax);
+  }}
+}
+
+
+
+.dot{       animation: xAxis 6.1s infinite cubic-bezier(0.02, 0.01, 0.21, 1.00);}
+.dot::after{animation: yAxis 4.1s infinite cubic-bezier( 0.3, 0.27, 0.07, 1.64);}
+
+.dot{
+  top:               0vmin;
+  left:              0vmin;
+  position:       absolute;
+}
+.dot::after{
+  content:              '';
+  display:           block;
+  will-change:   transform;
+  background-color:    red;
+  border:  white 4px solid;
+  position:       absolute;
+
+/*portrait*/
+  left:              6vmax;
+  top:               2vmin;
+  border-radius:    12vmin;
+  width:            12vmin;
+  height:           12vmin;
+}
+
+@media (orientation:landscape) {
+  .dot::after{
+    left:             12.5vmax;
+    top:               2vmin;
+    border-radius:    12vmin;
+    width:            12vmin;
+    height:           12vmin;
+  }
+}
+
+
+
+/*--------------------------------------------------------------------------------------------button*/
+[button], [button]:focus, [button]:hover, [button]:active{ text-decoration:none; outline:none;    }
+
+[button]{                           background-image:none; background-color:darkgray;            }
+[button]:hover{                     background-image:none; background-color:darkgray;            }
+
+[button]{
+  color: white;
+  display:         inline-block !important;
+  position:        relative;
+  cursor:          pointer;
+  border-radius:   5px;
+  letter-spacing:  -.5px;
+  padding-left:    2pt;
+  padding-right:   2pt;
+  margin:          4pt;
+  z-index:        9999;
+}
+
+[button]{
+  box-sizing:        border-box;   /*fix white space showing*/
+  background-origin: border-box;
+  background-size:   cover;
+}
+
+[button]{                          /*making button click better*/
+  resize: none;
+
+ -webkit-user-focus: none;
+    -moz-user-focus: none;
+     -ms-user-focus: none;
+      -o-user-focus: none;
+         user-focus: none;
+
+-webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+     -o-user-select: none;
+        user-select: none;
+
+         /*reduce click-delay (double click can be used as zoom, by mobile-devices, this way it is not */
+-webkit-touch-action:  pan-x pan-y;
+   -moz-touch-action:  pan-x pan-y;
+    -ms-touch-action:  pan-x pan-y;
+     -o-touch-action:  pan-x pan-y;
+        touch-action:  pan-x pan-y;
+}
+
+[button]{         border:1px solid lightgray;      background-image:linear-gradient(lightgray, black);  }
+[button]:focus{   border:1px solid lightgray;                                                           }
+[button]:hover{   border:1px solid lightgray;      background-image:linear-gradient(black, lightgray);  }
+[button]:active{  border:1px solid white;          background-image:linear-gradient(black, lightgray);  }
+/*------------------------------------------------------------------------------------------------------*/
+
+audio{
+ -webkit-user-focus: none;
+    -moz-user-focus: none;
+     -ms-user-focus: none;
+      -o-user-focus: none;
+         user-focus: none;
+
+-webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+     -o-user-select: none;
+        user-select: none;
+}
+
+
+[hidden]{ display:none; }
+
+
+[button],audio{opacity:0.001;}
+
+[button]:focus,[button]:hover,[button]:active
+,audio:focus,audio:hover,audio:active{opacity:0.80;}
+
+audio,[button]{
+  float:left;
+  margin:          4pt;
+}
+
+audio{border:1px solid lightgray;}

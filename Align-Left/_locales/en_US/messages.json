@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "Align-Left" }
+, "name_long":    {"message":   "Align-Left" }
+, "name_desc":    {"message":   "☞︎ align input text-elements to the left (Hebrew/Arabic too, but the direction is set to RTL for readability)." }
+}

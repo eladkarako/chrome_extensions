@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "Meta-Refresh Killer" }
+, "name_long":    {"message":   "Meta-Refresh Killer" }
+, "name_desc":    {"message":   "☞︎ Kills ᐸhttp-equiv=\"refresh\" Tags. Set chrome://flags/#disallow-doc-written-script-loads To DISABLED." }
+}

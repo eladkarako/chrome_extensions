@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "Ellipsis-Fix" }
+, "name_long":    {"message":   "Ellipsis-Fix" }
+, "name_desc":    {"message":   "☞︎ Replace Ellipsis Ending Links (\"…\") With Full Ones." }
+}

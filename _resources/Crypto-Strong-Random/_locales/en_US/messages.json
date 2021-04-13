@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "Crypto-Strong-Random" }
+, "name_long":    {"message":   "Crypto-Strong-Random" }
+, "name_desc":    {"message":   "☞︎ Cryptographically strong random values in Math.random() while keeping original functionality." }
+}

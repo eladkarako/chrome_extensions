@@ -1,0 +1,39 @@
+{ "manifest_version"        : 2
+, "minimum_chrome_version"  : "28.0"
+
+, "browser_specific_settings" : { "gecko":{ "id"                 : "polyfill@eladkarako.com"
+                                          , "strict_min_version" : "57.0"
+                                          }
+                                }
+
+, "default_locale"          : "en_US"
+, "name"                    : "__MSG_name_long__"
+, "short_name"              : "__MSG_name_shrt__"
+, "description"             : "__MSG_name_desc__"
+
+, "version"                 : "1.0.0.1"
+, "homepage_url"            : "https://github.com/eladkarako/chrome_extensions/tree/store/Polyfill/README.md"
+, "author"                  : "Elad Karako"
+
+, "content_scripts"         : [ {"js":  [
+                                         "resources/polyfill/es5.js"
+                                        ,"resources/polyfill/es6.js"
+                                        ,"resources/polyfill/es2016.js"
+                                        ,"resources/polyfill/es2017.js"
+                                        ,"resources/polyfill/keyboard.js"
+                                        ,"resources/polyfill/experimental/es-proposed.js"
+                                        ,"resources/polyfill/polyfill.js"
+                                        ,"resources/polyfill_assorted-others/document-register-element.max.js"
+                                        ,"resources/polyfill_assorted-others/attachshadow.js"  
+                                        ,"resources/polyfill_assorted-others/self.Element.prototype.toggleAttribute.js"  
+                                        ]
+                                        ,"all_frames"        : true
+                                        ,"match_about_blank" : true
+                                        ,"matches"           : [ "*://*/*" ]
+                                        ,"run_at"            : "document_start"
+                                }
+                              ]
+,"icons"                    : { "128": "resources/icon.png" }
+,"browser_action"           : {
+                              }
+}

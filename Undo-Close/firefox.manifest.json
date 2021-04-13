@@ -1,0 +1,33 @@
+{ "manifest_version"        : 2
+, "minimum_chrome_version"  : "28.0"
+
+, "browser_specific_settings" : { "gecko":{ "id"                 : "undo-close@eladkarako.com"
+                                          , "strict_min_version" : "57.0"
+                                          }
+                                }
+
+, "default_locale"          : "en_US"
+, "name"                    : "__MSG_name_long__"
+, "short_name"              : "__MSG_name_shrt__"
+, "description"             : "__MSG_name_desc__"
+
+, "version"                 : "1.0.0.1"
+, "homepage_url"            : "https://github.com/eladkarako/chrome_extensions/tree/store/Undo-Close/README.md"
+, "author"                  : "Elad Karako"
+
+, "permissions"             : ["activeTab"
+                              ,"tabs"
+                              ]
+
+, "background"              : { "scripts":    [ "resources/background.js"
+                                              ]
+                              }
+
+,"web_accessible_resources" : [ "resources/*.*"]
+
+,"icons"                    : { "128": "resources/icon.png" }
+
+,"browser_action"           : { "default_icon"   : "resources/icon.png"
+                                ,"default_title" : ""
+                              }
+}

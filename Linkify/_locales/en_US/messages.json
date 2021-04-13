@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "Linkify" }
+, "name_long":    {"message":   "Linkify" }
+, "name_desc":    {"message":   "☞︎ Convert URLs-in-text into clickable-links." }
+}

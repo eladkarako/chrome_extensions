@@ -1,0 +1,10 @@
+1.0.0.5
+* explicitly and exclusivly use passive-events in all event-listeners (where using 'preventDefault' is not needed as a part of the functionality anyway). should improve page-performances.
+* alternative check for main method 'action' when running from a different JavaScript file ('at_document_end.js'/'at_document_idle.js'), instead of try/catch which slows down performances due to extensive call-stack and prevents discoverying for other thrown errors.
+
+1.0.0.4
+* normalize action and action_for_element - internal function defined way from variable to standard function.
++ move logic to a browser-handled async block, by keeping 'action' as normal function, and moving all logic into a secodary 'async function async_action(){____}' block (which returns a promise, which isn't used for now). it simulates an old 'setTimeout(FUNCTION,0)'.
+
+1.0.0.3
++ initial.

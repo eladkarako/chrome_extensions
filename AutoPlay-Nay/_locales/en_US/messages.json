@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "AutoPlay-Nay" }
+, "name_long":    {"message":   "AutoPlay-Nay" }
+, "name_desc":    {"message":   "☞︎ Stops any/all automated-attempts to play media. Only you can play." }
+}

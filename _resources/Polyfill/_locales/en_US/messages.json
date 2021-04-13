@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "Polyfill" }
+, "name_long":    {"message":   "Polyfill" }
+, "name_desc":    {"message":   "☞︎ adds missing functions for old browsers." }
+}

@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "API-Killer-Cookie" }
+, "name_long":    {"message":   "API-Killer-Cookie" }
+, "name_desc":    {"message":   "☞︎ two-way network-firewall blocking sending/reciving cookie HTTP-Headers, along with client-side document.cookie nullification." }
+}

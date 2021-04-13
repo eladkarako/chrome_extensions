@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "NoJS" }
+, "name_long":    {"message":   "NoJS" }
+, "name_desc":    {"message":   "☞︎ Disables: JavaScript,IFRAMEs,Workers,Flash,Objects,Prefetch,WebRTC." }
+}

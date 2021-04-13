@@ -1,0 +1,31 @@
+1.0.0.15
+* filename is first considered based on current folder name or last item in the presented path, if there is way to extract current folder from internal navigation-description elements, filename is based on last part in location pathname, in case of an empty string, the filename is simply list (still with datetime prefix).
+* variable that stores the aria2c-command-snippet moved globally.
+
+1.0.0.14
++ adding (and improving) a download snippet helper for aria2c with specific list argument of the current file, a textarea with copy'able text hidden inside 'details' element which may be expand, the command-line supported in Windows CMD and linux, all a user has to do is to copy paste the command to the same place the list has being downloaded.
+
+1.0.0.12
+* improving the filename with the current "folder-name" according to the place user is currently in GitHub (when possible), it fallback to "list.txt".
+* improving button (switched from textnode to innerText to preserve newline characters). shows amount of entries and downloaded filename (and an icon of a diskette). for example: '??? List Of [36] URLs\r\n[20210412T205147__noto_sans_hebrew.txt]' for 'https://github.com/googlefonts/noto-fonts/tree/main/hinted/ttf/NotoSansHebrew'.  file will have no white-spaces characters (will be replaced with '_'), all lower-cases, and no camelCase but snake_case (words will be breaked with '_' and will be lower-case), other characters are ok.
++ filename include a ISO date prefix (no milliseconds, no timezone) with T before the time, everything is zero padded, for example '19911231T230159_'.
+
+
+1.0.0.11
++ (code factoring) string expressions for query are pre-defined (also used).
++ some information is written to 'console.log' and 'console.error' (temp. for debug stage) in cases where the main-functionality is going to quit (button already exists, can't find placeholder for the button, no items on the list), the information includes the string-query that was used, often those cases are when the GitHub page-structure has changed and the query-strings need to be updated.
+
+1.0.0.10
+* support better way to hold the content of the downloaded-file (Blob+File+URL, and plain encoding).
++ async execution of the main-method to ease the UI.
++ increasing the amount of event listeners to identify a content refresh.
+* all (possible) event listeners are passive to ease up the UI.
+
+1.0.0.9
+* additional repeat main method check, with alarms-api.
+
+1.0.0.8
+* improving cross-browser-API compatibility.
+
+1.0.0.2
++ initial (won't work nice with GitHub's version-of-SPF, user have to hard-refresh).

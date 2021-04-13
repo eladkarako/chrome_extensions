@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "API-Killer-Battery" }
+, "name_long":    {"message":   "API-Killer-Battery" }
+, "name_desc":    {"message":   "☞︎ Prevents Battery-Infomation Leaking By Killing The JavaScript Battery/Low-Level-Battery APIs." }
+}

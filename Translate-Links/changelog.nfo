@@ -1,0 +1,11 @@
+1.0.0.4
++ move logic to a browser-handled async block, by keeping 'action' as normal function, and moving all logic into a secodary 'async function async_action(){____}' block (which returns a promise, which isn't used for now). it simulates an old 'setTimeout(FUNCTION,0)'.
+
+1.0.0.3
+* suitable for another variation of Google-seach-page (the one that uses PING attributes, commonly used whe the page has no javascript support).
+
+1.0.0.2
+* acknowledge similar web-extension 'Archive-Links' (avoid working on its rendered links - it does the same for this web-extension).
+
+1.0.0.1
++ initial.

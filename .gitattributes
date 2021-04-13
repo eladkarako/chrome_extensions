@@ -1,0 +1,31 @@
+#explicit binary content (reduced diff).
+
+*.7z                      binary
+
+*.pdn                     binary
+
+*.png                     binary
+
+*.jpg                     binary
+
+#explicit Windows-EOL to avoid problems in single-line comments
+
+
+*.cmd                     text    eol=crlf
+
+*.css                     text    eol=crlf
+
+*.js                      text    eol=crlf
+
+*.txt                     text    eol=crlf
+
+*.html                    text    eol=crlf
+
+*.json                    text    eol=crlf
+
+firefox.manifest.json             eol=crlf
+
+manifest.json                     eol=crlf
+
+README.md                         eol=crlf
+

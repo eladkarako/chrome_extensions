@@ -1,0 +1,119 @@
+8.0.1.27
+* remove alarm ("timer") and some event-hooks.
+
+8.0.1.26
+* explicitly and exclusivly use passive-events in all event-listeners (where using 'preventDefault' is not needed as a part of the functionality anyway). should improve page-performances.
+* alternative check for main method 'action' when running from a different JavaScript file ('at_document_end.js'/'at_document_idle.js'), instead of try/catch which slows down performances due to extensive call-stack and prevents discoverying for other thrown errors.
+
+8.0.1.24
++ move logic to a browser-handled async block, by keeping 'action' as normal function, and moving all logic into a secodary 'async function async_action(){____}' block (which returns a promise, which isn't used for now). it simulates an old 'setTimeout(FUNCTION,0)'.
+
+8.0.1.23
+* improve support for newer-GitHub design (parts that requires the user to type exactlly what said above for approving an action - easier to copy/paste).
+
+8.0.1.22
+* handling 'A' element wrapping 'CODE' or 'PRE' element in any level-above ('CODE'/'PRE' that is child in any nesting level below).
+* engine improvement and code refreshing.
+
+8.0.1.21
++ adding support for easy copy of the repository-name ('username/repository name') in GitHub settings-dialogs (such as when choosing 'archive').
+
+8.0.1.19
+* additional repeat main method check, with alarms-api.
+
+8.0.1.18
+* prevent cases where link is wrapping a code-element (for example) element making the entire code-element (for example) clickable, similar to the case of clickable element inside code-element (for example).
+
+8.0.1.15
++ adding older HTML tags: KBD, SAMP and TT (TT is used in https://trac.ffmpeg.org/wiki)
+
+8.0.1.11
+* improving cross-browser-API compatibility.
+
+8.0.1.10
++ adding cross-browser attributes to the manifest.
+
+8.0.1.9
+* allow old-school fix for Mozilla/Firefox based browsers that (even if) (-moz-)user-modify is specified the CTRL+A still won't work, the workaround is to use 'contentEditable="true"' HTML-attribute.
+
+8.0.1.8
+* avoid nested-'editable' elements.
+* engine tweaks.
+
+8.0.1.7
+* adding for some comment-containers in some file-sharing websites.
+
+8.0.1.6
+* adding a 'code container' that uses 'dd > kbd' (not standard nor best practice..)- for example in bugmenot.com .
+
+8.0.1.5
+* adding 'span' with class 'pre' for code-areas in pypi.python.org .
+
+8.0.1.4
+* adding containers used for simple-code highlight in 'ss64.com'.
+
+8.0.1.3
+* Google-translate easier copy of the result.
+
+8.0.1.2
+* adjustments for events used for dynamic content loading (pjax/offline rendering) used usually in GitHub's-framework, but will probably fit other websites too.
+
+8.0.1.1
+* code fix/cleanup.
+
+8.0.0.9
++ adding github's danger-zone repository easy copy.
+
+8.0.0.8
++ adding support for W3Schools code-segments, although it is a shitty website and you should always prefer Mozilla's website.
+* improving query for new elements on dynamic pages with PJAX/SPF/generic.
+
+8.0.0.4
++ adding support for github's last node path (file/folder name) at the file/folder browser.
+
+8.0.0.3
++ adding support for last-node at the Breadcrumbs-crumb list of folders at googlesource.com for easy file-name copy.
+
+8.0.0.2
++ adding support for googlesource.com (very useful since raw file links are not always available).
+
+8.0.0.1
+* simplified engine.
+
+7.0.0.6
+* better applying "you can select this" rule, ignoring PRE elements which are used for a container of clickable elements (links and such..).
+
+7.0.0.5
+* engine fix for missing filter-method.
+
+7.0.0.4
+* only handle elements without link(A) element inside (it makes links hard to click...)
+
+7.0.0.3
+* more efficient counter.
+
+7.0.0.2
+* migrate to using 'user-select' CSS instead of contentEditable. main js code just there for counting.
+
+6.0.3.2
+* improved engine.
+
+6.0.3.1
+* using an object-isolated structure.
++ killing nasty 'Crayon-Syntax-Highlighter', replacing it with plain PRE, with safely encoded text.
+
+6.0.0.1
++ adding an additional code-recognise pattern, generic- used in pinvoke.net.
+* versioning changed for better compatibility with future releases. :]
+
+1.0.0.8
+* fix engine-loading.
+
+1.0.0.7
++ error handling
+
+1.0.0.6
+* improved elements-discovery query with more signatures for code-blocks.
+
+1.0.0.5
++ initial

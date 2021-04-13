@@ -1,0 +1,14 @@
+1.0.0.8
+* explicitly and exclusivly use passive-events in all event-listeners (where using 'preventDefault' is not needed as a part of the functionality anyway). should improve page-performances.
+
+1.0.0.7
+* meta-data update (no code change).
+
+1.0.0.6
+* use 'data-alignleft' for rediscover-cycles and CSS-rule element-identifying (not explicitly limiting to input-elements, so it may be extanded in the future).
++ moving style to CSS, rules apply by data-alignleft-attribute and DIR-attribhte (is/isn't "rtl"). 
++ maintaining DIR=RTL on content-change (Hebrew/Arabic characters adding-in/out) with onmouseup/onkeyup the element. CSS-rule by attribute automates visual change.
+
+1.0.0.1
++ initial.
+</pre>  

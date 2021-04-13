@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "Undo-Close" }
+, "name_long":    {"message":   "Undo-Close" }
+, "name_desc":    {"message":   "☞︎ Sends [CTRL]+[SHIFT]+[T]. Does not aware of any content not of windows nor tabs. Privacy friendly." }
+}

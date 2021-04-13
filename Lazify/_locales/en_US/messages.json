@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "Lazify" }
+, "name_long":    {"message":   "Lazify" }
+, "name_desc":    {"message":   "☞︎ Adds native-LazyLoading support for every image and iframe." }
+}

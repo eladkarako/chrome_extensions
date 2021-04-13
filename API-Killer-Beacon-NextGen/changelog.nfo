@@ -1,0 +1,20 @@
+3.0.2.6
+* explicitly and exclusivly use passive-events in all event-listeners (where using 'preventDefault' is not needed as a part of the functionality anyway). should improve page-performances.
+* alternative check for main method 'action' when running from a different JavaScript file ('at_document_end.js'/'at_document_idle.js'), instead of try/catch which slows down performances due to extensive call-stack and prevents discoverying for other thrown errors.
+
+3.0.2.5
++ move logic to a browser-handled async block, by keeping 'action' as normal function, and moving all logic into a secodary 'async function async_action(){____}' block (which returns a promise, which isn't used for now). it simulates an old 'setTimeout(FUNCTION,0)'.
+
+3.0.2.4
++ added execution from DOM-aspect.
+
+3.0.2.3
+* removed manually-generated string of the core-DOM function, in-favor of grabbing the actual-function string ('.toString') with reduced whitespace, this because of Mozilla-reviewers keeping flagging the string-injection as an obfuscated code (it is not).
+
+3.0.2.2
+* permission update for closed-tabs check before updating web-extension badge-number.
+* removed invalid network-permissions leftover.
+
+3.0.2.1
+* switching to manifest v3: declarativeNetRequest rule-set.
+* switching to manifest v3: service worker instead of background script.

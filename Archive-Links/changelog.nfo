@@ -1,0 +1,57 @@
+1.0.3.8
+- removing protocol-prefix and '://' for google-cache.
+- removing alarm ("timer" alternative).
+- reducing amount of event-listeners.
+* tweak CSS3 to allow slightly-faster click-reaction from both the link and its container-link.
+
+1.0.3.7
+* manifest fix - missing '*' at the end of some script-injection rules.
+* manifest improve - adding 'www.' and no 'www.' variation to cover cases (both for background script and injected scripts) - it helps is redirect cases.
+
+1.0.3.6
+* explicitly and exclusivly use passive-events in all event-listeners (where using 'preventDefault' is not needed as a part of the functionality anyway). should improve page-performances.
+* alternative check for main method 'action' when running from a different JavaScript file ('at_document_end.js'/'at_document_idle.js'), instead of try/catch which slows down performances due to extensive call-stack and prevents discoverying for other thrown errors.
+
+1.0.3.5
++ move logic to a browser-handled async block, by keeping 'action' as normal function, and moving all logic into a secodary 'async function async_action(){____}' block (which returns a promise, which isn't used for now). it simulates an old 'setTimeout(FUNCTION,0)'.
+
+1.0.3.4
+* suitable for another variation of Google-seach-page (the one that uses PING attributes, commonly used whe the page has no javascript support).
+
+1.0.3.3
+* acknowledge similar web-extension 'Translate-Links' (avoid working on its rendered links - it does the same for this web-extension).
+
+1.0.3.2
+* changing the attributes to standard data-attributes.
++ adding icons per archive-link.
++ adding highlight-marker style (yellow text shadow).
++ adding title with the item's original-URL and the service that will be used.
+
+1.0.3.1
+* improve engine.
+- removed 'webcitation.org' since it was very rare to find anything in it.
+- removed 'megalodon.jp' since it is basically just a badly written page pointing to 'Google cached version', 'Internet Archive', 'Archive.Is' and 'webcitation.org', and it is non-english.
+* improved manifest-matching to match the permission urls (and pattern).
++ moved some of the inline-styling to embedded CSS.
+
+1.0.2.4
++ adding support for megalodon.js archive-links with "megalodon.jp/?url="  .
+
+1.0.2.3
++ domain name testing before run (instead in manifest).
+
+1.0.2.1
++ adding support for new (dynamic) Google-Seach (Old/JavaScript-less had support already).
++ adding support for DuckDuckGo link results, since its very useful.
+
+1.0.0.4
+* additional repeat main method check, with alarms-api.
+
+1.0.0.3
+* fixing URL extraction.
+
+1.0.0.2
+* fixing matching of parts of redirect-url.
+
+1.0.0.1
++ initial.

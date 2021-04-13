@@ -1,0 +1,29 @@
+{ "manifest_version"        : 2
+, "minimum_chrome_version"  : "28.0"
+, "content_security_policy" : "script-src 'self'; object-src 'self'"
+
+, "default_locale"          : "en_US"
+, "name"                    : "__MSG_name_long__"
+, "short_name"              : "__MSG_name_shrt__"
+, "description"             : "__MSG_name_desc__"
+
+, "version"                 : "1.0.0.1"
+, "homepage_url"            : "https://github.com/eladkarako/chrome_extensions/tree/store/Save-Data/README.md"
+, "author"                  : "Elad Karako"
+
+, "offline_enabled"         : true
+
+, "permissions"             : ["*://*/*"
+                              ,"webRequest"
+                              ,"webRequestBlocking"
+                              ]
+, "background"              : { "scripts":    [ 
+                                                "resources/background_response_manipulation.js"
+                                              ]
+                              , "persistent": true 
+                              }
+,"web_accessible_resources" : [ "resources/*.*"]
+,"icons"                    : { "128": "resources/icon.png" }
+,"browser_action"           : {
+                              }
+}

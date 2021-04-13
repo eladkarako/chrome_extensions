@@ -1,0 +1,47 @@
+3.0.2.12
++ move logic to a browser-handled async block, by keeping 'action' as normal function, and moving all logic into a secodary 'async function async_action(){____}' block (which returns a promise, which isn't used for now). it simulates an old 'setTimeout(FUNCTION,0)'.
+
+3.0.2.11
+* changing the browser_specific_settings/gecko/id to "xda-alpha1@eladkarako.com" in-order to re-upload XDA to Mozilla-servers.
+
+3.0.2.8
+* additional repeat main method check, with alarms-api.
+
+3.0.2.7
+* improving cross-browser-API compatibility.
+
+3.0.2.1
+* improved background counter efficiency.
+
+3.0.1.9
++ added support for Chrome's idle state.
+- reduce package size.
+- limit re-discovery to once per-page life-cycle state-change (load/ready).
+* 100% offline.
+
+3.0.1.8
+* fix engine-loading.
+
+3.0.1.7
++ error handling
+
+3.0.1.6
+* flag fix
+
+3.0.1.5
+* limit repetition by flag done-elements.
+
+3.0.1.3
++ error handling
+
+3.0.1.2
+* adding prototyping for browser compatibility.
+
+3.0.1.1
+* tag-number updated instead of overriding it.
+
+3.0.0.1
+* engine update.
+
+2.0.0.5
++ initial (no versioning while internal-dev. cycle..)

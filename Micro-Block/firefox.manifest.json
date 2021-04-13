@@ -1,0 +1,71 @@
+{ "manifest_version"        : 2
+
+, "browser_specific_settings" : { "gecko":{ "id"                 : "micro-block@eladkarako.com"
+                                          , "strict_min_version" : "57.0"
+                                          }
+                                }
+
+, "default_locale"          : "en_US"
+, "name"                    : "__MSG_name_long__"
+, "short_name"              : "__MSG_name_shrt__"
+, "description"             : "__MSG_name_desc__"
+
+, "version"                 : "1.0.0.4"
+, "homepage_url"            : "https://github.com/eladkarako/chrome_extensions/tree/store/Micro-Block/README.md"
+, "author"                  : "Elad Karako"
+
+, "permissions"             : ["*://*/*"
+                              ,"declarativeNetRequest"
+                              ]
+                              
+, "declarative_net_request" : {"rule_resources": [{"id"     : "ruleset01_ping"
+                                                 ,"path"    : "resources/ruleset01_ping.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ,
+                                                 {"id"      : "ruleset02_websocket"
+                                                 ,"path"    : "resources/ruleset02_websocket.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ,
+                                                 {"id"      : "ruleset03_cspreport"
+                                                 ,"path"    : "resources/ruleset03_cspreport.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ,
+                                                 {"id"      : "ruleset04_generic_path"
+                                                 ,"path"    : "resources/ruleset04_generic_path.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ,
+                                                 {"id"      : "ruleset05_domains"
+                                                 ,"path"    : "resources/ruleset05_domains.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ,
+                                                 {"id"      : "ruleset06_specific_for_youtube"
+                                                 ,"path"    : "resources/ruleset06_specific_for_youtube.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ,
+                                                 {"id"      : "ruleset07_specific_for_google"
+                                                 ,"path"    : "resources/ruleset07_specific_for_google.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ,
+                                                 {"id"      : "ruleset08_generic_mix_of_url_parts"
+                                                 ,"path"    : "resources/ruleset08_generic_mix_of_url_parts.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ,
+                                                 {"id"      : "ruleset09_loose_match"
+                                                 ,"path"    : "resources/ruleset09_loose_match.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ]
+                              }
+
+,"icons"                    : { "128": "resources/icon.png" }
+,"browser_action"           : {
+                              }
+}

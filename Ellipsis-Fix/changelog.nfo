@@ -1,0 +1,30 @@
+1.0.1.18
+* removed some event-hooks and alarm ("timer").
+
+1.0.1.16
+* explicitly and exclusivly use passive-events in all event-listeners (where using 'preventDefault' is not needed as a part of the functionality anyway). should improve page-performances.
+* alternative check for main method 'action' when running from a different JavaScript file ('at_document_end.js'/'at_document_idle.js'), instead of try/catch which slows down performances due to extensive call-stack and prevents discoverying for other thrown errors.
+
+1.0.1.15
++ move logic to a browser-handled async block, by keeping 'action' as normal function, and moving all logic into a secodary 'async function async_action(){____}' block (which returns a promise, which isn't used for now). it simulates an old 'setTimeout(FUNCTION,0)'.
+
+1.0.1.14
+* additional repeat main method check, with alarms-api.
+
+1.0.1.12
+* disabling "1.0.1.4 only format a 'looks like a link' links"-check/limit since some websites include just relative URLs, but since it sits in HREF and it is in a node that has no-child nodes, it is probably safe to assign innerText.
+
+1.0.1.6
+* adding another 'end link' variation:  ..&gt; commonly used in https://nodejs.org/download/nightly/ for example
+* better-escaping the regular-expression.
+
+1.0.1.5
+* improving cross-browser-API compatibility.
+
+1.0.1.4
+* only format a "looks like a link" links.
++ include '...' variation.
++ support dynamic page-content (SPF and such...).
+
+1.0.1.2
++ initial.

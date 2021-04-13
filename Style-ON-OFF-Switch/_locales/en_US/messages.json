@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "Style-ON-OFF-Switch" }
+, "name_long":    {"message":   "Style-ON-OFF-Switch" }
+, "name_desc":    {"message":   "☞︎ Clicking ON/OFF has an immidiate effect - no refresh needed. Has background firewall blocking CSS-requests as partial solution for websites w/o JS-support (refresh needed)." }
+}

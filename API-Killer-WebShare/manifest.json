@@ -1,0 +1,31 @@
+{ "manifest_version"        : 2
+, "minimum_chrome_version"  : "28.0"
+
+, "default_locale"          : "en_US"
+, "name"                    : "__MSG_name_long__"
+, "short_name"              : "__MSG_name_shrt__"
+, "description"             : "__MSG_name_desc__"
+
+, "version"                 : "1.0.0.3"
+, "homepage_url"            : "https://github.com/eladkarako/chrome_extensions/tree/store/API-Killer-WebShare/README.md"
+, "author"                  : "Elad Karako"
+
+, "offline_enabled"         : true
+
+, "permissions"             : ["*://*/*"
+                              ,"tabs"
+                              ]
+, "background"              : { "scripts":    [ "resources/background_badge.js"
+                                              ]
+                              , "persistent": false
+                              }
+, "content_scripts"         : [ {"css": [ "resources/at_document_start.css" ], "all_frames": true, "match_about_blank": true, "matches": [ "*://*/*" ], "run_at": "document_start" }
+                              , {"js":  [ "resources/at_document_start.js"  ], "all_frames": true, "match_about_blank": true, "matches": [ "*://*/*" ], "run_at": "document_start" }
+                              , {"js":  [ "resources/at_document_end.js"    ], "all_frames": true, "match_about_blank": true, "matches": [ "*://*/*" ], "run_at": "document_end"   }
+                              , {"js":  [ "resources/at_document_idle.js"   ], "all_frames": true, "match_about_blank": true, "matches": [ "*://*/*" ], "run_at": "document_idle"  }
+                              ]
+,"web_accessible_resources" : [ "resources/*.*"]
+,"icons"                    : { "128": "resources/icon.png" }
+,"browser_action"           : {
+                              }
+}

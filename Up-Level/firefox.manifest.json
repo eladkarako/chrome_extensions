@@ -1,0 +1,39 @@
+{ "manifest_version"        : 2
+, "minimum_chrome_version"  : "28.0"
+
+, "browser_specific_settings" : { "gecko":{ "id"                 : "up-level@eladkarako.com"
+                                          , "strict_min_version" : "57.0"
+                                          }
+                                }
+
+, "default_locale"          : "en_US"
+, "name"                    : "__MSG_name_long__"
+, "short_name"              : "__MSG_name_shrt__"
+, "description"             : "__MSG_name_desc__"
+
+, "version"                 : "1.0.0.4"
+, "homepage_url"            : "https://github.com/eladkarako/chrome_extensions/tree/store/Up=Level/README.md"
+, "author"                  : "Elad Karako"
+
+
+
+, "permissions"             : [ "http://*/*"
+                               ,"https://*/*"
+                               ,"tabs"
+                               ,"history"
+                              ]
+, "background"              : { "scripts":    [ "resources/background_command.js"
+                                              ]
+
+                              }
+, "commands"                : { "command_action_1": { "suggested_key" : { "default"  : "Alt+Up"
+                                                                         ,"windows"  : "Alt+Up"
+                                                                         ,"mac"      : "Alt+Up"
+                                                                         ,"chromeos" : "Alt+Up"
+                                                                         ,"linux"    : "Alt+Up"
+                                                                        }
+                                                     ,"description"   : "action_1"
+                                                     ,"global"        : false
+                                                    }
+                              }
+}

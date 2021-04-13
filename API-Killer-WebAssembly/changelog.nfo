@@ -1,0 +1,45 @@
+1.0.2.18
+* explicitly and exclusivly use passive-events in all event-listeners (where using 'preventDefault' is not needed as a part of the functionality anyway). should improve page-performances.
+* alternative check for main method 'action' when running from a different JavaScript file ('at_document_end.js'/'at_document_idle.js'), instead of try/catch which slows down performances due to extensive call-stack and prevents discoverying for other thrown errors.
+
+1.0.2.17
++ move logic to a browser-handled async block, by keeping 'action' as normal function, and moving all logic into a secodary 'async function async_action(){____}' block (which returns a promise, which isn't used for now). it simulates an old 'setTimeout(FUNCTION,0)'.
+
+1.0.2.16
+* improving nullification process with additional reference removing- when possible object reference will be removed not just return undefined.
+
+1.0.2.15
++ DOM-injection is done with an clean-closure context. no function name is needed.
+
+1.0.2.14
++ injection engine - countering various security restrictions, by using three variation of the same nullifying code: inline-text, base64-src (domain-less data url) and blob-src (considered same domain as the web-page).
+* injection engine - generic improvements - removing duplicated code.
++ reduced memory usage by cleaning-up DOM nodes/objects after they are done.
++ nullification engine - improved nullification for function/class/constructor based non-strictly-speaking objects.
+* generic improvements for easier maintaining  - function name is generic (but its content is not naturally), for injecting - the function name is generated from the description.
++ try/catch are added on various end-points of DOM-manipulation or referencing data from web-extension-client-side on actual client-side (calling "action" method for example).
++ adding more dynamic-content related events to trigger main action.
+
+1.0.1.7
+* removed manually-generated string of the core-DOM function, in-favor of grabbing the actual-function string ('.toString') with reduced whitespace, this because of Mozilla-reviewers keeping flagging the string-injection as an obfuscated code (it is not).
++ added execution from DOM-aspect.
+
+1.0.1.6
+* permission update for closed-tabs check before updating web-extension badge-number.
+
+1.0.1.5
+* fixed the way the JavaScript is injected to the DOM for faster, no line-breaks, works better across-OS.
+
+1.0.0.3
+* slight engine modification.
+
+1.0.0.2
+* improving cross-browser-API compatibility.
+
+1.0.0.1
++ initial.
+</pre>
+
+<br/>
+
+<!-- <a href="https://paypal.me/e1adkarak0"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" alt="PayPal Donation"></a> -->

@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "Save-Data" }
+, "name_long":    {"message":   "Save-Data" }
+, "name_desc":    {"message":   "☞︎ adds 'save-data: on' HTTP-header to every request. some server respects that and provides an slightly faster page (reduced graphics and such..)." }
+}

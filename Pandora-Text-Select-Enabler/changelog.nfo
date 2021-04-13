@@ -1,0 +1,34 @@
+5.1.0.2
++ move logic to a browser-handled async block, by keeping 'action' as normal function, and moving all logic into a secodary 'async function async_action(){____}' block (which returns a promise, which isn't used for now). it simulates an old 'setTimeout(FUNCTION,0)'.
+
+5.1.0.1
+* cleanup of old code.
+* replace setTimeout/setInterval with alarm-API (1 minute), combined with DOM-triggered-events to run main action.
+* global counter-of-fixes for the web-extension badge-icon.
+* improving CSS-fixes by adding cross-browser ones.
+* run the code faster/earlier in the page load-lifecycle for improved performances.
+
+4.0.3.8
+* improving cross-browser-API compatibility.
+
+4.0.3.2
+* engine-update: improved identification of inline-blocking styles.
+
+4.0.2.3
+- removing HTTP-headers modifications and unneeded permissions.
+
+4.0.2.2
++ smart-removing Pandora's evil events from elements on the page.
+* engine update: efficient handling page resources.
++ added "hard but gentle" CSS-rule-override for "unselectable" nodes (complementary to the JavaScript solutions :] ).
+* engine update: make main action more-lazy by repeating it every 5sec instead of 2.5sec.
+
+
+4.0.2.1
+* engine update handling HTTP-req./resp. related resources only for Pandora-domains.
+
+4.0.1.2
+* overall graphics update.
+
+4.0.1.1
++ initial (no versioning while product was in-alpha developing :/ ).

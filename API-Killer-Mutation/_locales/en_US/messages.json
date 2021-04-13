@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "API-Killer-Mutation" }
+, "name_long":    {"message":   "API-Killer-Mutation" }
+, "name_desc":    {"message":   "☞︎ Kills Mutation API - legacy MutationEvent-types and the newer MutationObserver." }
+}

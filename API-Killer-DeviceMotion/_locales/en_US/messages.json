@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "API-Killer-DeviceMotion" }
+, "name_long":    {"message":   "API-Killer-DeviceMotion" }
+, "name_desc":    {"message":   "☞︎ Kills 1. Device Motion-And-Acceleration API, 2. Screen-Orientation API, 3. Compass-State API 4. Compass-Value API." }
+}

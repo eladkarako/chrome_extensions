@@ -1,0 +1,98 @@
+{web_extensions             : { 
+ "API-Killer-Beacon"        : {chrome  : "okllieelegmmjlkfnddadhblbgejeido"
+                              ,firefox : "api-killer-beacon"
+                              }
+,"API-Killer-Cookie"        : {chrome  : "niekhfkkkdlijikahmbnalbdjplhckfp"
+                              ,firefox : "api-killer-cookie"
+                              }
+,"API-Killer-GeoLocation"   : {chrome  : "phfjlkpokppddpaheobnkghipaopiegj"
+                              ,firefox : "api-killer-geolocation"
+                              }
+,"API-Killer-History"       : {chrome  : "dpfbfocmhmbejoghfnkondoldkflpogd"
+                              ,firefox : "api-killer-history"
+                              }
+,"API-Killer-IndexedDB"     : {chrome  : "hokompfcfgfccehpdnoopepbfcngjdfb"
+                              ,firefox : "api-killer-indexeddb"
+                              }
+,"API-Killer-Storage"       : {chrome  : "mgkgbnanhlcdceadopkifplfiephfboe"
+                              ,firefox : "api-killer-storage"
+                              }
+,"API-Killer-WebAssembly"   : {chrome  : "haolbjigloblcahenmiifnfnhhgggaco"
+                              ,firefox : "api-killer-webassembly"
+                              }
+,"API-Killer-WebRTC"        : {chrome  : "nfabpfgidhkidmajcgdigfggambfbamk"
+                              ,firefox : "api-killer-webrtc"
+                              }
+,"API-Killer-WebSocket"     : {chrome  : "edelopdocdndaknahobbohmffbcpnkei"
+                              ,firefox : "api-killer-websocket"
+                              }
+,"AutoComplete-Enabler"     : {chrome  : "ghgipeacnodigoobfmaigjoldognimac"
+                              ,firefox : "autocomplete-enabler"
+                              }
+,"Behind-The-Asterisks"     : {chrome  : "jjcfacbhbllbbcgocdijgilnbjdmjdkf"
+                              ,firefox : "behind-the-asterisks-webext"
+                              }
+,"Boostaler"                : {chrome  : "jckhjkeamaabikcpkgchmnkcflnibahk"
+                              ,firefox : "boostaler"
+                              }
+,"Capture"                  : {chrome  : ""
+                              ,firefox : ""
+                              }
+,"CORS"                     : {chrome  : "nnlclodalppllianmmohmhejidoncabi"
+                              ,firefox : "cors-webext"
+                              }
+,"CSS-Image"                : {chrome  : "jmbgeefkhopbheajpfgbmjbgmhaablai"
+                              ,firefox : "css-image"
+                              }
+,"Direct-CNET"              : {chrome  : "encdppdfgdglgbifdekmllinmaldbcli"
+                              ,firefox : ""
+                              }
+,"Direct-FileHippo"         : {chrome  : "kebbedemiajndbnpnhbfhpcaaimpgdgm"
+                              ,firefox : "direct-filehippo"
+                              }
+,"Direct-MediaFire"         : {chrome  : ""
+                              ,firefox : ""
+                              }
+,"Direct-ZippyShare"        : {chrome  : ""
+                              ,firefox : ""
+                              }
+,"eBay-Boxed"               : {chrome  : "epcoldmegiangfeeoiignkblhggmghkp"
+                              ,firefox : "ebay-boxed"
+                              }
+,"eBay-UnPromote"           : {chrome  : "himinghdncempdbbmkbmcmjmfionpoif"
+                              ,firefox : "ebay-unpromote"
+                              }
+,"Editable"                 : {chrome  : "lkgihclmkcafppnalgoicamhkmchlkaa"
+                              ,firefox : "editable"
+                              }
+,"Ellipsis-Fix"             : {chrome  : "jhnedijpbhljeodmdfjjgdmihkanaple"
+                              ,firefox : "ellipsis-fix"
+                              }
+,"EMDR"                     : {chrome  : "fkldjkhoepahmdpcjnkilfncnfheldem"
+                              ,firefox : "emdr"
+                              }
+,"Enabler"                  : {chrome  : "iaholhlaaoiibpgelolgeochbaghmbpi"
+                              ,firefox : "enabler"
+                              }
+,"Full-ON"                  : {chrome  : "ejhdfmcncenneeaganeijkjmebfngdal"
+                              ,firefox : "full-on"
+                              }
+,"Gallery-Break"            : {chrome  : "cdfjlfmhmmedblalekalpfpnfkpkblbc"
+                              ,firefox : "gallery-break"
+                              }
+,"GitHub-Download-List"     : {chrome  : "delagnahmopokpojbgphgdgbacfbipcf"
+                              ,firefox : "github-download-list"
+                              }
+
+
+
+
+}
+,store                      : {chrome  : "https://chrome.google.com/webstore/detail/###ID###/"
+                              ,firefox : "https://addons.mozilla.org/en-GB/firefox/addon/###ID###/"
+                              }
+,update                     : {chrome  : "https://chrome.google.com/webstore/devconsole/g03515699806574763260/###ID###/edit/package"
+                              ,firefox : "https://addons.mozilla.org/en-GB/developers/addon/###ID###/versions/submit/"
+                              }
+}
+

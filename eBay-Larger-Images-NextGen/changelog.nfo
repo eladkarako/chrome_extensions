@@ -1,0 +1,12 @@
+1.0.0.4
+changing the JSON-file to conventional 'ruleset01.json', matching the id in the manifest, and the ignore rule (under the /.gitignore).
+
+1.0.0.3
++ adding a second regular expression to specifically handle sizes that starts with '2' (but not '2000').
+
+1.0.0.2
+* modifying the regular-expression to reduce the chance of infinite-loop of reloading by ignoring URLs where the first digit in the size-identification section (/s-lXXXX.webp or /s-lXXXX.jpg) is not '2', since the modification is to 2000 (640x640 pixels) the end URL will never be re-matched with the regular-expression.
++ very old Chromium-based-versions (for example 67.0.3396.99) that supports 'declarativeNetRequest' had declarative_net_request.rule_resources be a single string representing a single JSON-file, but newer browser need a newer-format that specify enable/id/path for each JSON-files (multiple files supported). I have saved the old format manifest-files but by default will use the new format manifest-files.
+
+1.0.0.1
+* initial.

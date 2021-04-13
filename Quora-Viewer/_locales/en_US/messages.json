@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "Quora-Viewer" }
+, "name_long":    {"message":   "Quora-Viewer" }
+, "name_desc":    {"message":   "☞︎ simple page-view without dynamic content. block [*.]quora.com in chrome://settings/content/javascript" }
+}

@@ -1,0 +1,60 @@
+1.0.3.15
++ move logic to a browser-handled async block, by keeping 'action' as normal function, and moving all logic into a secodary 'async function async_action(){____}' block (which returns a promise, which isn't used for now). it simulates an old 'setTimeout(FUNCTION,0)'.
+
+1.0.3.14
++ since we live in a web-extension, injecting CSS into an IFRAME IS EASY! - multiple style-fixes for better experience and speed: padding, image-boarder, and vertical content flow.
+
+1.0.3.12
+* always large container.
+* larger border.
+
+1.0.3.11
++ only blocking sub-frame, allowing some new design to be open the content in a new tab (not handling it for now).
+
+1.0.3.10
++ not handling requests from links.
+
+1.0.3.9
++ loading=eager/lazyload=off attributes to avoid native lazyloading the IFRAME (compatible with implementations of the API in old browsers).
+
+1.0.3.8
+* permission update for closed-tabs check before updating web-extension badge-number.
+
+1.0.3.7
+* when creating the new-IFRAME, internally manipulate the element's attribute instead of (easier) innerHTML injection a TEMPLATE.
+* more event-triggers to trigger main action (although not really needed).
+* pushing newer 'background_badge.js' instead of 'background_main.js'.
+
+1.0.3.4
+* re-wrote the engine/filenames to be similar to the other web-extensions.
++ adding badge with total of IFRAME worked on.
++ generalised the web-extension to support multiple IFRAMEs to work on.
+* moving action-method to start early (this also generate the IFRAME faster).
+* moving applied styles to start early.
+* making-sure the IFRAME always loads-up from HTTPS.
+
+1.0.2.3
+* improving cross-browser-API compatibility.
+
+1.0.2.2
++ added support for Chrome's idle state.
+- reduce package size.
+- limit re-discovery to once per-page life-cycle state-change (load/ready).
+
+1.0.2.1
+* only apply fix for iframe, leave other web-parts (junk..) untouched.
+
+1.0.1.2
+* engine speed boost.
+
+1.0.0.5
+* error handling.
+
+1.0.0.4
+* engine updated - force iframe content-type to text/html with UTF-8 charset.
+
+1.0.0.2
+* engine updated (permissions)
+
+1.0.0.1
++ initial.

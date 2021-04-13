@@ -1,0 +1,66 @@
+{ "manifest_version"        :  2
+
+, "default_locale"          : "en_US"
+, "name"                    : "__MSG_name_long__"
+, "short_name"              : "__MSG_name_shrt__"
+, "description"             : "__MSG_name_desc__"
+
+, "version"                 : "1.0.0.4"
+, "homepage_url"            : "https://github.com/eladkarako/chrome_extensions/tree/store/Micro-Block/README.md"
+, "author"                  : "Elad Karako"
+
+, "permissions"             : ["*://*/*"
+                              ,"declarativeNetRequest"
+                              ]
+                              
+, "declarative_net_request" : {"rule_resources": [{"id"     : "ruleset01_protocols"
+                                                 ,"path"    : "resources/ruleset01_protocols.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ,
+                                                 {"id"      : "ruleset02_generic_path"
+                                                 ,"path"    : "resources/ruleset02_generic_path.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ,
+                                                 {"id"      : "ruleset03_domains"
+                                                 ,"path"    : "resources/ruleset03_domains.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ,
+                                                 {"id"      : "ruleset04_specific_for_youtube"
+                                                 ,"path"    : "resources/ruleset04_specific_for_youtube.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ,
+                                                 {"id"      : "ruleset05_specific_for_google"
+                                                 ,"path"    : "resources/ruleset05_specific_for_google.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ,
+                                                 {"id"      : "ruleset06_specific_for_facebook"
+                                                 ,"path"    : "resources/ruleset06_specific_for_facebook.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ,
+                                                 {"id"      : "ruleset07_generic_mix_of_url_parts"
+                                                 ,"path"    : "resources/ruleset07_generic_mix_of_url_parts.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ,
+                                                 {"id"      : "ruleset08_loose_match"
+                                                 ,"path"    : "resources/ruleset08_loose_match.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ,
+                                                 {"id"      : "ruleset09_from_3rd_party"
+                                                 ,"path"    : "resources/ruleset09_from_3rd_party.json"
+                                                 ,"enabled" : true
+                                                 }
+                                                 ]
+                              }
+
+,"icons"                    : { "128": "resources/icon.png" }
+,"browser_action"           : {
+                              }
+}

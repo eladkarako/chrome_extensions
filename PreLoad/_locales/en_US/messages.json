@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "PreLoad" }
+, "name_long":    {"message":   "PreLoad" }
+, "name_desc":    {"message":   "☞︎ Sets all video and audio to preload (cache, a.k.a download before playing) the content." }
+}

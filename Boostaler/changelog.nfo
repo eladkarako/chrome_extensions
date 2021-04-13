@@ -1,0 +1,23 @@
+2.0.9.7
+- not processing XHR and "other" requests to make websites more work better on dynamic content updates (without it eBay hangs..).
+
+2.0.9.6
+* restricted variant modification fix.
+
+2.0.9.2
+* improving cross-browser-API compatibility.
+
+2.0.9.1
++ updating list-of-available, cache'able elements to Chrome's max value according to https://developer.chrome.com/extensions/webRequest , which adds media :]
+* improving caching-system, enabling cache for everything (tryout...)
+
+2.0.8.5
+- prefer stale for resources only (not pages) to improve stability.
++ allowing stale on XHR to speed up dynamic pages (YouTube!).
+* prefer using '--enable-stale-while-revalidate --enable-offline-load-stale-cache' command line switches to Chrome's-shortcut. The chrome-flag is removed on newer Chrome versions.
+
+2.0.8.3
++ have stale directive on my request types (but not XHR ones!)
+
+2.0.8.2
++ initial: (no versioning while was in-active alpha-stage :] ).

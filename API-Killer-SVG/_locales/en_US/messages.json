@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "API-Killer-SVG" }
+, "name_long":    {"message":   "API-Killer-SVG" }
+, "name_desc":    {"message":   "☞︎ blocks SVG (fonts or images), hide SVG elements from DOM, hide images with src=*.svg*, null'ify SVG API from DOM." }
+}

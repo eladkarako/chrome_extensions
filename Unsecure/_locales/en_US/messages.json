@@ -1,0 +1,4 @@
+{ "name_shrt":    {"message":   "Unsecure" }
+, "name_long":    {"message":   "Unsecure" }
+, "name_desc":    {"message":   "☞︎ Removes Frame/XSS/Content-Type/Security-Policy/Referrer Limitations" }
+}

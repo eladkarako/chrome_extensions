@@ -1,0 +1,43 @@
+1.0.0.11
++ add support for structure of other ebay list-pages.
+
+1.0.0.10
+* JS   - switching from using 'A'-element to 'BUTTON'-element for the buttons (no '.href', or hashtag just javascript events so no visible jump on click, or need to disable hashtag functionality..).
+* JS   - switching from using old-school 'onclick' to adding-event-listener.
+* JS   - button-event-listeners are passive-event listeners (when browser supports it) so performances are better.
+* JS   - button-event-listeners-callbacks (the target methods) are 'async' (..wrapped), when browser supports it, so the browser-UI won't stuck or hang in long processing (for example 'hiding sellers by their ratings'). it's like placing the functionality in 'setTimeout(function(){.....},0)' but without using timers...
+* JS   - placing the buttons in a (DIV) container by natural display order, instead of multiple calls to insert as first child of the placeholder. it will keep the content displayed better (by being a 'display:block') and reduce DOM-insertion to single call, which will save some rendering and reflow.., avoiding using adding before first child of the placeholder in-favor of append-child of a container also means the code-engine is more readable (not reversed to provide desired order).
+* JS   - checking to see if the container for the buttons (identified by '.container-of-all-button-sorter-elements' or '[data-ebaysorters]') exists-already, this enables future moving of the action-method from 'on DOM ready' to earlier stages (although the search-list items might won't finish rendering yet), and even running 'action()' multiple times (in-case needed) - as soon as the placeholder is found, without elements being re-written.
+- JS   - removed reference to onclick methods in self window (used as a fallback to old onclick handler).
++ CSS3 - explicitly assigning 'touch-action' to 'manipulation' (or when not supported to 'pan-x pan-y pinch-zoom') to (maybe) save 300ms click delay (in some-cases), applying this CSS-rule to 1. all elements created by this web-extension (buttons, button's container), 2. the actual placeholder which is a part of the eBay page itself (website fix).
+- CSS3 - removing '@namespace "http://www.w3.org/1999/xhtml";' in some of the injected CSS-files.
+
+1.0.0.9
+* better identifying a "search-result list"-page (and only preforming action if it is a suitable page for eBay-sorters functionality).
++ in methods that extracts data from DOM-nodes of the "search-result list" items --- the data is stored for reuse (if a user searches again using the same button). data is stored in an Object-Oriented (object attribute). data reused will help to avoid re-extracting same data again (beside from being pointless, extraction is done through a 'querySelector' method, which is quite a pricy in terms of CPU and page-memory usage).
++ for debug-purposes a same value is also stored as a DOM-node's ('data-ebaysorters-price' for example), it is not used since it is essentially a string and requires re-parsing to a number - but this way a developer (or a user) may track the data extracted from each "search-result-list"-item and identify possible bugs (for example falling back to zero after failing to extract number from text due to some changes in the DOM-tree or text-format).
+
+1.0.0.8
++ move logic to a browser-handled async block, by keeping 'action' as normal function, and moving all logic into a secodary 'async function async_action(){____}' block (which returns a promise, which isn't used for now). it simulates an old 'setTimeout(FUNCTION,0)'.
+
+1.0.0.7
++ adding sorting by reviews (most reviews on top, least amount of reviews or zero if there are none - on bottom).
+
+1.0.0.6
+* making existing functionality work in seller pages where the page components have a slightly different names.
+
+1.0.0.5
++ adding a functionality: hide sellers with rating less than a specific value (- by default 95.0%) you input through inputbox (self.prompt dialog box) . additional sort with different value (for example 0%) can reveal the hidden sellers without refreshing the page. this make the list of products smaller and easier to scroll (for making it more effective set the list-result-size to maximum of 200 - or append "&_ipg=200" to the end of your search URL).
++ adding a functionality: sort by seller-rating, highest rating on top of the list.
+
+1.0.0.4
+* engine improving, reusing repeating parts, stored methods.
+
+1.0.0.3
+* modified execution-start-time to "at_document_end" (file's content is injected immediately after the DOM is complete, but before subresources like images and frames have loaded, like DOMContentLoaded), was at "at_document_idle" but too many IFRAMES used by eBay messes things up. anyway, only works if you use a shortcut to old eBay search systems for example:   https://www.ebay.com/sch/i.html?_nkw=CALCULATOR&_udlo=3&_udhi=40&_ipg=200&LH_BIN=1&LH_ItemCondition=3&LH_PrefLoc=6&rt=nc&LH_FS=1  .
+
+1.0.0.2
+* permission update for closed-tabs check before updating web-extension badge-number.
+
+1.0.0.1
++ initial.

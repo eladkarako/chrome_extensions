@@ -1,0 +1,245 @@
+8.0.6.36
+* engine logic change: extraction from 'srcset', 'data-srcset', 'data-expanded-srcset' (etc...): previously I was taking the first item before the first space, it was easy but it was also the lowest resolution image, now I take the last item, it requires some filtering since 'srcset' includes the width description next to each the URL, so I apply a generic rule of image which are fine --- item includes a dot or a linux-forward-slash (this may fail if the image does not contains a dot, for example if you are testing stuff on your localhost, or if you are using a Windows-server which may use a Windows-backward-slash for some reason).
++ adding support for 'data-expanded-srcset' which sometimes is used in google-websites such as 'webcache.googleusercontent.com' .
+- removing alarm ("timer") to reduce some CPU and memory. deleting 'resources/background_alarm.js', removing "alarms" from "permissions", removing "resources/background_alarm.js" (from "background": "scripts").
+- reducing amount of event-listeners to History-API event and transitionend which is commonly used in material-design after a massive page-content changed.
+* whenever possible --- using passive event-listeners to reduce some CPU and RAM.
+
+8.0.6.35
++ fix to force use of larger resolution images whenever possible in eBay.
++ use .jpg instead of .webp in some section in eBay.
+
+8.0.6.34
++ adding support for generic 'data-big-src', which is not commonly used, but when it does being used it is usually used with 'data-src', where 'data-src' is for a very small (thumbnail) image and 'data-big-src' is for normal-size/full resolution image. this is why 3rd-party lazyloading is nasty! 'data-src' is pretty much a standard, but noooooo... let's use it for a thumbnail instead.. arrrr! nevermind, I just added another rule that extracts 'data-big-src' before 'data-src' (if any of them exists) so the larger-resolution is grabbed first.
+
+8.0.6.33
++ move logic to a browser-handled async block, by keeping 'action' as normal function, and moving all logic into a secodary 'async function async_action(){____}' block (which returns a promise, which isn't used for now). it simulates an old 'setTimeout(FUNCTION,0)'.
+
+8.0.6.32
++ adding support for custom elements "amp-img".
+
+8.0.6.31
++ adding support for stripping custom-elements such as 'lazy-image' which have no meaningful parsing in DOM other than with-in a custom javascript engine, and using all the useful attributes in a new image-element, which the brower can nativly understand even without javascript support on the page.
+
+8.0.6.29
+- not including browser explicitly disabling of LazyLoading attributes (loading="eager"/lazyload="off") since it can made dynamic-content pages load 1000x* images (see https://ksp.co.il/). once a normal image has set and a 3rd-party-lazyloading engine has null'ified, the browser may use its own native lazyloading engine, which a user may disable using Chrome/Chromium - <code>chrome://flags/#enable-lazy-image-loading</code> (set to disable) or command-line "--disable-features=LazyImageLoading" and Firefox- about:config "dom.image-lazy-loading.enabled" (set to false). 
+* this UnLazy web-extension DO however continue to set the "async" attribute to allow parallel parsing of images.
+
+8.0.6.28
+* few engine modification for image-handling, performances and improving in case of parallel-run.
+* a 'do not handle' in case initial URL-extraction from lazy-loaded image result with a blank URL.
+
+8.0.6.25
++ adding support for cleaning LazyLoading implementation of 'Layzr.JS' (https://github.com/callmecavs/layzr.js) based on 'data-layzr'/'data-layzr-srcset' attributes of an IMG. It is quite nasty old-school LazyLoading-implementation, based on resize/scroll events which makes the page VERY laggy.
+
+8.0.6.24
+* not using the loading-eager/lazyload-off in some cases.
+
+8.0.6.23
++ provide async decoding for all images (even images that were not directly modified by UnLazy web-extension).
++ disable native-lazyload (if not by Lazify web-extension) by loading eager and lazyload off attributes (even for iframes, and images that were not directly modified by UnLazy web-extension).
+
+8.0.6.22
++ explicitly disabling native-lazyloading with [loading="eager"] and [lazyload="off"].
++ just for fun (makes images load in parallel) - adding explicitly 'decoding="async"' attribute to fixed images. saving you some time..
+
+8.0.6.21
++ improving handling 'container is a picture' cases.
++ remove CDN-modifers such as crop and resize from the URL, image might be very big.
++ taking purged style and class from the picture to be used in the img, plus minor style-fixes to prevent overflowing of a too-big image...
+
+8.0.6.18
++ support 'data-srcset', taking latest resource in the list nomally it is the highest quality.
+* engine improve.
+
+8.0.6.16
++ adding support for 'data-dt-lazy-src' which is commonly used in digitaltrends website and other WordPress-based websites (its a plugin).
+
+8.0.6.15
+* fix for case where 'PICTURE' is the container, and the source has a width/height specified after one space at the end of the real URL, which needed to be trimmed away..
+
+8.0.6.14
+* unify to generic 'data-src' (not specifically starting with http* or // ) and completing the protocol and hostname (a.k.a "origin") if needed, to explicitly use fully-qualified URL.
++ adding support for 'data-srcs' (may contain multiple sources and some data in a JSON-object like structure) - purging the content to keep the first "valid URL" and use that.
+
+8.0.6.11
+* improve engine-handling SRC-URLs starting with '//'. Explicitly provide protocol (favoring HTTPS when possible).
+
+8.0.6.8
++ adding support for IMDB that stores the real SRC in a 'loadlate' attribute.
+
+8.0.6.7
+* changing the browser_specific_settings/gecko/id to "unlazy-alpha1@eladkarako.com" in-order to re-upload UnLazy to Mozilla-servers.
+
+8.0.6.4
+* mark the Unlazy'ed-images so it can later be addressed by CSS to reveal opacity/display/visibility properties.
+
+8.0.6.3
++ add CSS hard-overriding rules to reveal images: opacity, display, visibility. rather than specifying a value I'm using "unset" to let the native definition of the browser take effect. For websites such as https://www.cxovoice.com/ that includes in the 'related-articles' a wrapping DIV to animate (with JavaScript) the loading of the image, nasty.
+
+8.0.6.2
++ adding UnLazy-rule for images where the real-image is placed in an 'data-cvpsrc' attribute, used by WordPress based websites with the 'WPFastestCache' plugin which rewrite all images to lazyloading ones (not handling 'data-cvpset' since it rarely being used).
+
+8.0.6.1
+* fixing a bug regarding grabing the real SRC from the original-element.
+
+8.0.5.2
+* improving 'unhiding' images.
+
+8.0.4.1
++ making the main-action JavaScript run as a repeat 'timed' alarm every 1 minute. Uses "alarms" for the 'timer' and "tabs" for executing JavaScript file. The JavaScript file 'at_document_idle.js' (with just 'action();') will executed starting from 'document_start+1minute' and will repeat every one minute. This is a friendly way running timed code that does not uses setTimeout nor setInterval.
+
+8.0.3.5
++ adding case where the container is a 'DIV'-element with image-source in 'data-offscreen-lazy' property.
+* improve building of image from div (in cases where the container is a DIV-element) with trying to get width and height of the container, assigning it to the clean-generated 'IMG'-element, fallback to 'rounding' the result of 'self.getComputedStyle()' (without fraction nor units, just a plain whole-number).
+
+8.0.3.3
+* fixing data-src case for cases where there isn't an empty/filler SRC attribute (old WordPress).
+
+8.0.3.1
+- removing more of the onload/onerror blocking.
+- fixing a small bug, where a website uses picture with several sources, the data-srcset needs to be cleaned-up and semi-parsed to extract the correct URL for the clean image (for example see articles on main body of kotaku.com ).
+
+8.0.2.21
+- removing the onload/onerror blocking-load event since it requires too much CPU-load to manage.
+
+8.0.2.20
++ adding a way to prevent late/dynamic 'onload' and 'onerror' hooking on the newly-created (clean) images by any LazyLoad-engine.
+
+8.0.2.19
++ adding support for extraction from 'data-lazy-srcset' (commonly used by WordPress-lazyloading plugin) - first resource listed (while still prefering 'data-lazy-src' over, - it tries to extract it first).
+* making the rule extraction for 'data-lazy-src' more generic so it will match better for 'not as strict' lazy-loading cases (mostly commonly used in WordPress).
+* null'ifying the 'src' and 'srcset' before de-attaching the img by cloning (which helps to remove event handlers), lowers memory used(!) and improve object handling, plus it doesn't leave 'srcset=""' attributes around...
+
+8.0.2.17
+* removing the 'little gift' because the impolite review (https://addons.mozilla.org/en-GB/firefox/addon/unlazy/reviews/1317920/ : 1/5 and demanding support) was removed by 'caitmuenster'. Thanks!
+* since matched-patterns are SRC based and not using SRCSET, I've 'empty-string'ed the SRCSET variable, in-one case the WordPress lazy-loading has set the SRCSET as well with a 1x1 temp. image, bug fixed with the help of this support-request from a Mozilla-review: https://addons.mozilla.org/en-GB/firefox/addon/unlazy/reviews/1322140/ . Thanks!
+
+8.0.2.13
+* removed mutation-observer, making the web-extension faster but might not work as well on dynamic-content.
+* enhancing the 'little gift' with nice colors and stop loading the page asap. so funny Ha haaa Haaaa :)
+
+8.0.2.12
+* bring back the 'little gift' for specialized domains because it was so funny Ha haaa Haaaa :)
+
+8.0.2.10
+* fixing missing 'get source' from a generic lazy-loading attribute.
+- removing gift for specialized domain, although it was pretty funny.
+
+8.0.2.9
+* adding a little gift for specialized domain.
+
+8.0.2.8
++ remove 'lazy' marking in class-list, this helps to prevent various loading-engines from addressing the images even when the SRC was already fixed.
+* include various WordPress generic-cases that uses data-lazy-src, data-lazy-srcset, and data-lazy-sizes attributes.
++ adding an 'unhide' tweak to handle pre-hidden content.
+
+8.0.2.7
++ adding support for images with data-img-src markup for the real image.
+
+8.0.2.6
+* improving cross-browser-API compatibility.
+
+8.0.2.5
+* adding support for simple 'data-url' to replace 'src'.
+
+8.0.2.4
+* adding support for custom lazy-loading used in thinkgeek-website.
+
+8.0.2.3
+* small fix for eBay new page-structure with img/src (1x1pixel)/data-src (real image).
+
+8.0.2.2
++ adding support of PICTURE-SOURCE as used in several blogs (lifehacker uses it).
+
+8.0.2.1
+* observing DOM-changes more closely, in addition to existing ways.
+
+8.0.1.7
+* listening to 'yt-page-*' and 'yt-navigate-*' events for page-content changing.
+
+8.0.1.6
++ adding support for lazy-loading IMG-elements holding the real-image in 'data-echo' attribute, used in some online-carts pages.
+
+8.0.1.5
++ adding support for images with 'data-lazysrc' attributes used in custom lazy-loading solutions.
+
+8.0.1.4
++ adding flattening of "grid-images" (such in "nerdist.com" website) where the image is nesting with a lazy-loading (fallback is a loading-gif) with data-1x1 or data-2x2 attributes.
+* providing global fix for cross-origin http-https mistakes in websites.
+
+8.0.1.3
++ adding another variation of jQuery-lazy, common in video-galleries where the image hides under 'data-original' attribute.
+
+8.0.1.2
+* cleaning some CDN's non-sense syntax in final IMG URLs.
+
+8.0.1.1
++ add support for several cases of "div as img" when it uses "data-src" and "data-original-src" attributes.
+* split main code to two short cases of img/div as main containers.
+
+8.0.0.2
+* including generalized alternative/custom pagespeed functionality used in ebay.
+
+8.0.0.1
+* reduced functionality - handling just pagespeed.
+
+7.0.3.3
+* improved handling of SPF loading. Note that YouTube will still cache the webp animated-video previews, if you want to block it (since you will use the jpg static preview anyway) you should add something like this "ytimg.com/*/mqdefault_6s.webp" rule to your ublock-origin list, which will load the page faster.
+
+7.0.1.1
+* handling all images on the page and improved results heuristically.
++ dynamic-pages element discovering - efficiently and w/o timers!
+* including non-mainstream hacks for YouTube's static/moving thumbnail.
+
+6.2.0.9
++ prefer to always show the video-preview on YouTube.
+
+6.2.0.8
++ adding support for YouTube animated-video thumbs.
+
+6.2.0.7
++ adding fixout for lazy-loading images, being hidden, mostly used in youtube...
+
+6.2.0.6
++ added support for Chrome's idle state.
+- reduce package size.
+- limit re-discovery to once per-page life-cycle state-change (load/ready).
+- removed isolation.
+
+6.2.0.4
+* improve element-discovery.
++ adding "hiding"-removal.
+
+6.2.0.3
+* improve element-discovery-query for hidden or ad-blocked images.
+
+6.2.0.1
+* refactor code for global scope isolation (reduced memory print).
+* refactor code for image background pre-caching outside of DOM (reduced reflow, reduced CPU).
+* generic code-style refactor, to be slightly-less-centralised (reduce usage of anonymous-function in main loop since those are now cached-once and referenced onced in-look by name).
+* specified ONLY handling of IMG elements - ignore IFRAMEs, although possible to being handled by this extension :../  ...and ignore SCRIPTs since it was never-meant to be handled by this extension :/
+
+6.1.4.2
+* improved element discovery (ignoring 'srcset' - which is a legitimate HTML5's attribute and not "lazy" related..)
+
+6.1.4.1
++ add support for LazyLoading using generic 'js-preload'.
+
+6.1.3.1
++ added generic heuristics-pattern matching for jQuery's LazyLoad.
+
+6.1.2.7
++ added anti-YouTube-LazyLoading.
+
+6.1.2.5
+* refactor flag identification.
+
+6.1.2.4
+* improved flag definition.
+
+6.1.2.3
++ added fix for unescaped-HTML-entities leftovers.
+
+6.1.2.2
++ initial (mostly used in Google's PageSpeed LazyLoading - for example: used on eBay)
